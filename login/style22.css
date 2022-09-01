@@ -1,0 +1,79 @@
+body{
+margin:0;
+padding:0;
+font-family:Georgia;
+background:#CC99CC;
+background-color:#FFFFFF;
+}
+.box2{
+height:600px;
+width:900px;
+padding:300px;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:#802472;
+text-align:center;
+background-color:#FFFFFF;
+background-image:url(../upload/projectimages/cloves%20betel%20nut.jpg);
+background-repeat:repeat-y;
+margin-top:-170px;
+}
+.box2 h1{
+text-align:center;
+text-decoration:underline;
+color:#000000;
+text-transform:uppercase;
+font-weight:500;
+margin-top:200px;
+margin-left:300px;
+}
+.box2 h2{
+color:#0000CC;
+text-transform:uppercase;
+font-weight:200;
+margin-left:290px;
+}
+.box2 input[type="text"],.box2 input[type="text"],.box2 input[type="text"],.box2 input[type="date"],.box2 input[type="text"],.box2 input[type="text"],.box2 input[type="password"],.box2 input[type="password"]{
+border:0;
+background:none;
+display:block;
+margin:20px auto;
+text-align:center;
+border:2px solid #3498db;
+padding:14px 10px;
+width:300px;
+outline:none;
+color:#000000;
+border-radius:24px;
+transition:0.25s;
+margin-left:430px;
+font-size:28px;
+}
+.box2 input[type="text"]:focus,.box2 input[type="text"]:focus,.box2 input[type="text"]:focus,.box2 input[type="date"]:focus,.box2 input[type="text"]:focus,.box2 input[type="text"]:focus,.box2 input[type="password"]:focus,.box2 input[type="password"]:focus{
+width:320px;
+background:none;
+}
+.box2 input[type="submit"]{
+border:0;
+background:none;
+font-size:28px;
+background-color:#00CC33;
+display:block;
+margin:20px auto;
+text-align:center;
+border:2px solid #2ecc71;
+padding:14px 20px;
+width:150px;
+outline:none;
+color:white;
+border-radius:24px;
+transition:0.25s;
+cursor:pointer;
+margin-left:520px;
+}
+.box2 input[type="submit"]:hover{
+background:#2ecc71;
+}
+

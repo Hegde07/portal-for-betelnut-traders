@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="style22.css" rel="stylesheet" type="text/css" />
+<title>Registration</title>
+
+   <head>
+      <script type="text/javascript">
+         function generateCaptcha()
+         {
+             var alpha = new Array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z');
+             var i;
+             for (i=0;i<4;i++){
+               var a = alpha[Math.floor(Math.random() * alpha.length)];
+               var b = alpha[Math.floor(Math.random() * alpha.length)];
+               var c = alpha[Math.floor(Math.random() * alpha.length)];
+               var d = alpha[Math.floor(Math.random() * alpha.length)];
+              }
+            var code = a + '' + b + '' + '' + c + '' + d;
+            document.getElementById("mainCaptcha").value = code
+          }
+          function CheckValidCaptcha(){
+              var string1 = removeSpaces(document.getElementById('mainCaptcha').value);
+              var string2 = removeSpaces(document.getElementById('txtInput').value);
+              if (string1 == string2){
+         document.getElementById('success').innerHTML = "Form is validated Successfully";
+         //alert("Form is validated Successfully");
+                return true;
+              }
+              else{       
+         document.getElementById('success').innerHTML = "Please enter a valid captcha."; 
+         //alert("Please enter a valid captcha.");
+                return true;
+         
+              }
+          }
+          function removeSpaces(string){
+            return string.split(' ').join('');
+          }
+      </script>    
+</head>
+
+<body onload="generateCaptcha();">
+<form class="box2" action="../dealer_info_insert.php" method="post"/>
+<h1>Enter Details to Register</h1>
+         <h2>Sign up</h2>
+<input type="text" name="t1" placeholder="Name" required pattern="[A-Za-z\s]+" title="enter characters only"/>
+<input type="text" name="t2" placeholder="City" required pattern="[A-Za-z\s]+" title="enter characters only"/>
+<input type="text" name="t3" placeholder="Address"required pattern="[A-Za-z\s]+" title="enter characters only" />
+<input type="text" name="t4" placeholder="Pincode" required pattern="[0-9]{6}" title="Enter a valid Pincode"/>
+
+<input type="text"  name="t5" placeholder="Mobile number" required pattern="[6-9]{1}[0-9]{9}" title="Enter a valid phone number only"/>
+<input type="text"  name="t6" placeholder="Email" required/>
+<input type="password" name="t7" placeholder="Password" required/>
+<input type="text" name="t8" placeholder="GSTIN" required/>
+
+  <tr>
+               <td>
+                  <input type="text" id="txtInput" placeholder="enter captcha code" onkeyup="CheckValidCaptcha();" required/>    
+               </td>
+            </tr>
+            
+            
+<tr>
+               <td>
+                  <input type="text" id="mainCaptcha"readonly="readonly"/> 
+                  
+                  <input type="button" id="refresh" value="Refresh Captcha" onclick="generateCaptcha();" />
+               </td>
+            </tr>
+            
+            
+            <tr>
+               <td><span id="success" style="color:green"></span></td>
+            </tr>
+
+<br />
+<input id="Button1" type="submit" value="Submit"  style="width:200px; background-color:#0000FF;"/>
+
+</body>
+</html>
